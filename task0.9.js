@@ -1,12 +1,12 @@
-function getVowels(character) {
+function getVowels(char) {
     let vowels = ["a", "e", "i", "o", "u"];
   
-    character = character.toLowerCase();
+    char = char.toLowerCase();
   
     let holdVowels = [];
-    for (let i = 0; i < character.length; i++) {
+    for (let i = 0; i < char.length; i++) {
       for (let j = 0; j < vowels.length; j++) {
-        if (character[i] === vowels[j]) {
+        if (char[i] === vowels[j]) {
           holdVowels.push(vowels[j]);
         }
       }
@@ -25,12 +25,12 @@ function getVowels(character) {
       }
     }
   
-    let StringVowel = "Vowels: ";
+    let stringVowel = "Vowels: ";
     for (let i = 0; i < holdVowels.length; i++) {
-      StringVowel += holdVowels[i];
-      if (i < holdVowels.length - 1) StringVowel += ", ";
+      stringVowel += holdVowels[i];
+      if (i < holdVowels.length - 1) stringVowel += ", ";
     }
   
-    return StringVowel + [...holdVowels];
+    console.log(stringVowel);
   }
-  console.log(getVowels(awesome));
+  getVowels("gorgeous");

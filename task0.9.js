@@ -1,5 +1,5 @@
 function getVowels(char) {
-    let vowels = ["a", "e", "i", "o", "u"];
+    const vowels = ["a", "e", "i", "o", "u"];
   
     char = char.toLowerCase();
   

@@ -1,20 +1,21 @@
-function commonLetters(firstNoun, secondNoun) {
-  let saveCommonLetters = [];
-
-  for (let i = 0; i < secondNoun.length; i++) {
-    for (let j = 0; j < firstNoun.length; j++) {
-      if (firstNoun[j].toLowerCase() === secondNoun[i].toLowerCase()) {
-        saveCommonLetters.push(firstNoun[j].toLowerCase());
+function getCommonLetters(string1, string2) {
+  let commonCharacters = [];
+  for (let i = 0; i < string2.length; i++) {
+    for (let j = 0; j < string1.length; j++) {
+      if (string1[j].toLowerCase() === string2[i].toLowerCase()) {
+        commonCharacters.push(string1[j].toLowerCase());
       }
     }
   }
-  saveCommonLetters = [...new Set(saveCommonLetters)];
+  commonCharacters = [...new Set(commonCharacters)];
 
-  let commonLetters = "Common characters: ";
-  for (let i = 0; i < saveCommonLetters.length; i++) {
-    commonLetters += saveCommonLetters[i];
-    if (i < saveCommonLetters.length - 1) commonLetters += ", ";
+  let sameLetters = "Common letters: ";
+  for (let i = 0; i < commonCharacters.length; i++) {
+    sameLetters += commonCharacters[i];
+    if (i < commonCharacters.length - 1) sameLetters += ", ";
   }
-  console.log(commonLetters); 
+
+  console.log(sameLetters);
 }
-commonLetters("Andile","Anele");
+
+getCommonLetters("Andile", "Anele");

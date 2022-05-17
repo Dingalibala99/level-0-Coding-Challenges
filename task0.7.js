@@ -2,6 +2,6 @@ function celsiusToFahrenheit(celsius) {
      return (celsius * 1.8) + 32
 } 
 function fahrenheitToCelsius(fahrenheit) {
-  return 1.8 * (fahrenheit - 32);
+  return (fahrenheit - 32) / 1.8;
 }     
-console.log(fahrenheitToCelsius(89));
+console.log(fahrenheitToCelsius(194));

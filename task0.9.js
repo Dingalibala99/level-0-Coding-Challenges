@@ -1,36 +1,40 @@
 function getVowels(char) {
-    const vowels = ["a", "e", "i", "o", "u"];
-  
-    char = char.toLowerCase();
-  
-    let holdVowels = [];
-    for (let i = 0; i < char.length; i++) {
-      for (let j = 0; j < vowels.length; j++) {
-        if (char[i] === vowels[j]) {
-          holdVowels.push(vowels[j]);
+  const vowels = ["a", "e", "i", "o", "u"];
+
+  char = char.toLowerCase();
+  let foundVowels = [];
+ let stringVowel = "Vowels: ";
+
+  for (let i = 0; i < char.length; i++) {
+    for (let j = 0; j < vowels.length; j++) {
+      if (char[i] === vowels[j]) {
+        foundVowels.push(vowels[j]);
+
+        for (let i = 0; i < foundVowels.length; i++) {
+          let countVowels = 0;
+          for (let j = 0; j < foundVowels.length; j++) {
+            if (foundVowels[i] == foundVowels[j]) {
+              countVowels++;
+            }
+            if (countVowels > 1) {
+              foundVowels.splice(j, 1);
+              j = j + 1;
+            }
+            
+          }
+         
         }
+        
       }
     }
-  
-    for (let i = 0; i < holdVowels.length; i++) {
-      let countVowels = 0;
-      for (let j = 0; j < holdVowels.length; j++) {
-        if (holdVowels[i] == holdVowels[j]) {
-          countVowels++;
-        }
-        if (countVowels > 1) {
-          holdVowels.splice(j, 1);
-          j = j + 1;
-        }
-      }
-    }
-  
-    let stringVowel = "Vowels: ";
-    for (let i = 0; i < holdVowels.length; i++) {
-      stringVowel += holdVowels[i];
-      if (i < holdVowels.length - 1) stringVowel += ", ";
-    }
-  
-    console.log(stringVowel);
+    
   }
-  getVowels("gorgeous");
+
+  for (let i = 0; i < foundVowels.length; i++) {
+    stringVowel += foundVowels[i];
+    if (i < foundVowels.length - 1) stringVowel += ", ";
+  }
+  console.log(stringVowel);
+
+}
+getVowels("Coca Cola");

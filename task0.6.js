@@ -1,5 +1,5 @@
 function getMaximum(val1, val2, val3) {
-    let maximumValue = 0,
+    let maximumValue = 0;
     if (val1 >= val2 && val1 >= val3) {
       maximumValue = val1;
     } else if (val2 >= val1 && val2>= val3) {
@@ -9,5 +9,5 @@ function getMaximum(val1, val2, val3) {
     }   
     return maximumValue;
     }
-  console.log(getMaximum(50,60,60));
+  console.log(getMaximum(-50,-60,-40));
 

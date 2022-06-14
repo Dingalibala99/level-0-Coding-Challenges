@@ -1,6 +1,11 @@
 function convertTime(val) {
-  let hours = ~~(val / 60);
+  let hours = Math.floor(val / 60);
   let minutes = val % 60;
+
+  if(val === 60){
+    hours -= hours;
+    minutes = 60;
+  }
 
   hours += hours === 1 ? " hour, " : " hours, ";
 
@@ -8,4 +13,4 @@ function convertTime(val) {
 
   return hours + minutes;
 }
-console.log(convertTime(121));
+console.log(convertTime(60));
